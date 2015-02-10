@@ -1,0 +1,22 @@
+.ge-appbar {
+  @extend .shadow-1;
+  background: white;
+  display: flex;
+  align-items: center;
+  height: rem(56px);
+  padding: 0 rem(8px) 0 rem(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .flex {
+    display: flex;
+    flex: 1;
+  }
+
+  @media #{$medium-and-up} {
+    height: rem(64px);
+    padding: 0 rem(24px) 0 rem(12px);
+  }
+}

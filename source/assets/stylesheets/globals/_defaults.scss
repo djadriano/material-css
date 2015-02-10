@@ -6,3 +6,5 @@ body {
   letter-spacing: .1px;
   -webkit-font-smoothing: antialiased;
 }
+
+@include box-shadow-classes();

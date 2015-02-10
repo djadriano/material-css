@@ -56,3 +56,15 @@ $types:(
     font-weight: map-get($font-weight, light)
   ),
 );
+
+$icon-size: rem(24px);
+
+/* buttons config */
+
+$inline-button-size: rem(36px);
+$inline-button-padding: 0 rem(8px);
+$inline-button-margin: rem(4px);
+$inline-button-min-width: rem(88px);
+
+$floating-button-size: rem(56px);
+$floating-button-mini-size: rem(40px);

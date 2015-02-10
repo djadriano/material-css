@@ -1,28 +1,79 @@
-.euro-button {}
-
 %button {
+  @include transition(all 250ms);
   @include get-type(button);
   display: inline-block;
   vertical-align: middle;
   text-transform: uppercase;
   border: 0;
   outline: 0;
+  cursor: pointer;
+  text-align: center;
+
+  [class*="mdi-"] {
+    font-size: $icon-size;
+    vertical-align: middle;
+  }
 }
 
 %inline-button {
+  @include border-radius(3px);
+  height: $inline-button-size;
+  line-height: $inline-button-size;
+  padding: $inline-button-padding;
+  margin: $inline-button-margin;
+  min-width: $inline-button-min-width;
+}
+
+%floating-button {
+  @include border-radius(100%);
+}
+
+.ge-btn {
   @extend %button;
-  height: rem(36px);
-  padding: 0 rem(8px);
-  margin: rem(4px);
-  min-width: rem(88px);
 }
 
 .floating {
+  @include box-shadow(1);
+  @extend %floating-button;
+  width: $floating-button-size;
+  height: $floating-button-size;
+  line-height: $floating-button-size;
+  padding: 0;
 
+  &:active {
+    @include box-shadow(3);
+  }
+
+  &.mini {
+    width: $floating-button-mini-size;
+    height: $floating-button-mini-size;
+    line-height: $floating-button-mini-size;
+  }
+
+  &.icon {
+    @include box-shadow(0);
+    background: transparent;
+
+    &:active {
+      background: rgba( #999, .4 );
+    }
+  }
 }
 
 .raised {
   @extend %inline-button;
+  @include box-shadow(1);
+
+  &:active:not(.disabled) {
+    @include box-shadow(3);
+  }
+
+  &:disabled,
+  &.disabled {
+    @include box-shadow(0);
+    background: rgba( #000, .12 ) !important;
+    color: rgba( #000, .26 ) !important;
+  }
 }
 
 .flat {
@@ -39,11 +90,8 @@
 
   &:disabled,
   &.disabled {
-    color: rgba( #000, .26 );
-
-    &:hover {
-      background: transparent;
-    }
+    background: white !important;
+    color: rgba( #000, .26 ) !important;
   }
 }
 
