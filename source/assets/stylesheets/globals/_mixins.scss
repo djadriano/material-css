@@ -1,0 +1,27 @@
+@mixin get-type( $type ) {
+
+  $type-selected: map-get( $types, $type );
+
+  font-size: map-get($type-selected, font-size);
+  font-weight: map-get($type-selected, font-weight);
+
+  @if( map-has-key( $type-selected, line-height ) ) {
+    line-height: map-get($type-selected, line-height);
+  }
+
+}
+
+@mixin generate-type-classes( $types ) {
+
+  @each $item-name, $item-type in $types {
+    .#{$item-name} {
+      font-size: map-get($item-type, font-size);
+      font-weight: map-get($item-type, font-weight);
+
+      @if( map-has-key( $item-type, line-height ) ) {
+        line-height: map-get($item-type, line-height);
+      }
+    }
+  }
+
+}

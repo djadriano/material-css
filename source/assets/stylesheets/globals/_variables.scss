@@ -1,0 +1,58 @@
+$font-weight:(
+  'light'  : 300,
+  'regular': 400,
+  'medium' : 500
+);
+
+$types:(
+  'caption': (
+    font-size  : rem(12px),
+    font-weight: map-get($font-weight, regular)
+  ),
+  'button': (
+    font-size  : rem(14px),
+    font-weight: map-get($font-weight, medium)
+  ),
+  'body1': (
+    font-size  : rem(14px),
+    font-weight: map-get($font-weight, regular),
+    line-height: rem(24px)
+  ),
+  'body2': (
+    font-size  : rem(14px),
+    font-weight: map-get($font-weight, medium),
+    line-height: rem(24px)
+  ),
+  'subhead': (
+    font-size  : rem(16px),
+    font-weight: map-get($font-weight, regular),
+    line-height: rem(24px)
+  ),
+  'title': (
+    font-size  : rem(20px),
+    font-weight: map-get($font-weight, medium)
+  ),
+  'headline': (
+    font-size  : rem(24px),
+    font-weight: map-get($font-weight, regular),
+    line-height: rem(32px)
+  ),
+  'display1': (
+    font-size  : rem(34px),
+    font-weight: map-get($font-weight, regular),
+    line-height: rem(40px)
+  ),
+  'display2': (
+    font-size  : rem(45px),
+    font-weight: map-get($font-weight, regular),
+    line-height: rem(48px)
+  ),
+  'display3': (
+    font-size  : rem(56px),
+    font-weight: map-get($font-weight, regular)
+  ),
+  'display4': (
+    font-size  : rem(112px),
+    font-weight: map-get($font-weight, light)
+  ),
+);

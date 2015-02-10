@@ -1,0 +1,49 @@
+.euro-button {}
+
+%button {
+  @include get-type(button);
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  border: 0;
+  outline: 0;
+}
+
+%inline-button {
+  @extend %button;
+  height: rem(36px);
+  padding: 0 rem(8px);
+  margin: rem(4px);
+  min-width: rem(88px);
+}
+
+.floating {
+
+}
+
+.raised {
+  @extend %inline-button;
+}
+
+.flat {
+  @extend %inline-button;
+  background: white;
+
+  &:hover {
+    background: rgba( #999, .2 );
+  }
+
+  &:active {
+    background: rgba( #999, .4 );
+  }
+
+  &:disabled,
+  &.disabled {
+    color: rgba( #000, .26 );
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}
+
