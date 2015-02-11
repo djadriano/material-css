@@ -16,6 +16,11 @@
   </head>
 
   <body class="<%= page_classes %>">
-    <%= yield %>
+    <%= partial 'shared/header' %>
+    <main class="ge-main">
+      <%= partial 'shared/nav_default' %>
+      <%= yield %>
+    </main>
+    <div class="ge-overlay"></div>
   </body>
 </html>

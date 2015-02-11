@@ -5,6 +5,32 @@ body {
   font-family: 'Roboto', sans-serif;
   letter-spacing: .1px;
   -webkit-font-smoothing: antialiased;
+
+  &.nav-default-opened {
+    .ge-overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
 
 @include box-shadow-classes();
+
+.is-not-list {
+  margin: 0;
+  list-style: none;
+}
+
+.ge-overlay {
+  @include translateZ(0);
+  @include transition(visibility 0 linear 0.4s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  visibility: hidden;
+  opacity: 0.1;
+  z-index: 3;
+}
