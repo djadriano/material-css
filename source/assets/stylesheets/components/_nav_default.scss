@@ -1,13 +1,13 @@
 .ge-nav-default {
+  @include translate3d(0, 0, 0);
   @include get-type(body2);
   @include translateX(-100%);
-  @include transition(all 250ms 0.1s);
+  @include transition(transform ease-in-out 0.3s);
   background: white;
   position: fixed;
   top: 0;
   left: 0;
   width: calc(100% - 56px);
-  max-width: rem(400px);
   height: 100vh;
   z-index: 4;
 
@@ -39,6 +39,11 @@
 
     [class*="mdi-"] {
       margin-right: rem(31px);
+      color: rgba( #000, .54 );
+    }
+
+    &:hover {
+      background: rgba( #000, .100 );
     }
 
     @media #{$medium-and-up} {
@@ -48,5 +53,10 @@
 
   body.nav-default-opened & {
     @include translateX(0);
+  }
+
+  @media #{$medium-and-up} {
+    max-width: rem(400px);
+    width: rem(240px);
   }
 }

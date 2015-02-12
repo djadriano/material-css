@@ -27,7 +27,7 @@ body {
 .ge-overlay {
   @include translateZ(0);
   @include transition(visibility 0 linear 0.4s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1));
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
