@@ -37,3 +37,11 @@ body {
   opacity: 0.1;
   z-index: 3;
 }
+
+.ge-main {
+  padding-top: rem(64px);
+
+  @media #{$medium-and-up} {
+    padding-top: rem(72px);
+  }
+}

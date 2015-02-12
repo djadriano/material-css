@@ -1,6 +1,9 @@
 @import 'compass';
 
 @import 'vendors/normalize';
+@import 'vendors/components/color';
+@import 'vendors/components/variables';
+@import 'vendors/components/grid';
 
 @import 'globals/functions';
 @import 'globals/mixins';
@@ -8,10 +11,6 @@
 @import 'globals/typography';
 @import 'globals/icons';
 @import 'globals/defaults';
-
-@import 'vendors/components/color';
-@import 'vendors/components/variables';
-@import 'vendors/components/grid';
 
 @import 'components/buttons';
 @import 'components/appbar';
