@@ -6,15 +6,6 @@ body {
   letter-spacing: .1px;
   height: 100%;
   -webkit-font-smoothing: antialiased;
-
-  &.nav-default-opened {
-    overflow: hidden;
-
-    .ge-overlay {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
 }
 
 @include box-shadow-classes();
@@ -36,6 +27,11 @@ body {
   visibility: hidden;
   opacity: 0.1;
   z-index: 3;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .ge-main {

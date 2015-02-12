@@ -5,8 +5,17 @@ angular.module('ge', [])
 
     $scope.toggleOffCanvasOpen = function() {
       $rootScope.$apply(function() {
-        $rootScope.offcanvasOpened ? $rootScope.offcanvasOpened = false : $rootScope.offcanvasOpened = true;
-      })
+        $rootScope.showOffCanvas = !$rootScope.showOffCanvas;
+      });
+    };
+
+  }])
+  .controller('overlayController',['$scope', '$rootScope', function( $scope, $rootScope ) {
+
+    $scope.toggleOverlay = function() {
+      $rootScope.$apply(function() {
+        $rootScope.showOverlay = !$rootScope.showOverlay;
+      });
     };
 
   }])
@@ -14,10 +23,12 @@ angular.module('ge', [])
     return {
       restrict  : 'A',
       require   : ['^?offcanvasButton'],
+      controller: 'overlayController',
       link      : function( scope, element, attrs ) {
 
         element.bind('click', function( evt ) {
           scope.toggleOffCanvasOpen();
+          scope.toggleOverlay();
         });
 
       }
@@ -27,15 +38,18 @@ angular.module('ge', [])
     return {
       restrict  : 'A',
       controller: 'offcanvasButtonController',
+      require   : ['^?overlay'],
       link      : function( scope, element, attrs ) {
 
         element.bind('click', function( evt ) {
           scope.toggleOffCanvasOpen();
+          scope.toggleOverlay();
         });
 
       }
     };
   })
   .run(['$rootScope', function( $rootScope ) {
-    $rootScope.offcanvasOpened = false;
+    $rootScope.showOffCanvas = false;
+    $rootScope.showOverlay   = false;
   }]);
